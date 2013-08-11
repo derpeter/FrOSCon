@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="de.froscon13.schedule"
+      android:versionCode="2"
+      android:versionName="1.1">
+    <uses-sdk android:minSdkVersion="7" 
+        android:targetSdkVersion="17" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application android:icon="@drawable/froschbutton" android:label="@string/app_name">
+        <activity android:name=".Froscon13"
+                  android:label="@string/app_name"
+                  android:theme="@style/Theme.Sherlock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+<!--     <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
+    <item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+    <item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
+   </style>
+
+     <style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+    <item name="background">@drawable/bg_striped</item>
+    <item name="android:background">@drawable/bg_striped</item>
+
+    <item name="backgroundSplit">@drawable/bg_striped_split</item>
+    <item name="android:backgroundSplit">@drawable/bg_striped_split</item>
+</style> -->
+</manifest>
