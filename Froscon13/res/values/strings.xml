@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FrOSCon13</string>
+    <string name="refresh">Refresh</string>
+    <string name="info">Homepage</string>
+    <string name="host">Host</string>
+    <string name="enyhost">mobile schedule url</string>
+    <string name="OK">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="home">Home</string>
+    <string name="fs">Fullscreen</string>
+</resources>
