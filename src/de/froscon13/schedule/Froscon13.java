@@ -43,7 +43,7 @@ public class Froscon13 extends SherlockActivity {
     public static final String PREFS_NAME = "EnyPrefs";
     private boolean fs = false;
     private Bitmap icon;
-
+    
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -178,7 +178,7 @@ public class Froscon13 extends SherlockActivity {
 		inflater.inflate(R.menu.main_options_menu, menu);
 		return true;
 	}
-	
+		
 	/** Host choosing dialog. */
 	private void hostpicker() {
 		AlertDialog.Builder picker = new AlertDialog.Builder(this);
@@ -230,6 +230,8 @@ public class Froscon13 extends SherlockActivity {
 	    editor.commit();
 	}
 	
+	
+	
 	/** Called when menu buttons are puhsed. */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -259,6 +261,10 @@ public class Froscon13 extends SherlockActivity {
             return true;
 		case R.id.fs:
 			toggleFullScreen();
+			return true;
+		case R.id.maps:
+			startActivity(new Intent(this, Mapview.class).putExtra("fs", fs));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

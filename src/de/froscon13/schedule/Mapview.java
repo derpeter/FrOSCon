@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
@@ -21,7 +22,6 @@ import com.actionbarsherlock.view.MenuItem;
 
 public class Mapview extends SherlockActivity{
 //public class Mapview extends SherlockActivity {
-
 	int floor = 0;
 	FrameLayout outerframe;
 	WebView mWebView;
@@ -30,6 +30,13 @@ public class Mapview extends SherlockActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mapview);
+		Bundle extras = getIntent().getExtras();
+		if (extras != null){
+			if (extras.getBoolean("fs")){
+				getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+			}
+		} 
 		outerframe = ((FrameLayout) findViewById(R.id.mapframe));
 		mWebView = new WebView(this);
 		outerframe.addView(mWebView);
