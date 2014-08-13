@@ -15,6 +15,7 @@ import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,6 +31,8 @@ import android.webkit.WebViewClient;
 import android.webkit.WebChromeClient;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.SherlockActivity;
 import android.webkit.SslErrorHandler;
 
@@ -76,7 +79,9 @@ public class Froscon13 extends SherlockActivity {
 		initUI();
 	}
 
-	/** Reload the UI and create a web view is necessary. */
+
+	
+	/** Reload the UI and create a web view is necessviewary. */
 	protected void initUI() {
 		webViewPlaceholder = ((FrameLayout) findViewById(R.id.webViewPlaceholder));
 
@@ -99,7 +104,14 @@ public class Froscon13 extends SherlockActivity {
 			myWebView.getSettings().setLoadsImagesAutomatically(true);
 
 			// prevent links from be opened in an external browser
-			myWebView.setWebViewClient(new WebViewClient());
+			myWebView.setWebViewClient(new WebViewClient(){
+			    public void onReceivedError(WebView view, int errorCod,String description, String failingUrl) {
+			        Toast.makeText(myWebView.getContext(), "Could not load schedule.\n Check internet connection" , Toast.LENGTH_LONG).show();
+			        Log.w("Froscon13","can't get schedule");
+			        myWebView.loadUrl("file:///android_res/drawable/froschbutton.png");
+			        //myWebView.setEnabled(false);
+			    }
+			});
 			// Ignore SSL certificate errors because webview cant accept selffigned stuff
 //			@Override
 //			public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
@@ -109,6 +121,7 @@ public class Froscon13 extends SherlockActivity {
 			// enable javascript
 			myWebView.getSettings().setJavaScriptEnabled(true);			
 			myWebView.loadUrl(url);
+
 		}
 
 
@@ -119,6 +132,8 @@ public class Froscon13 extends SherlockActivity {
 	    actionBar.setDisplayHomeAsUpEnabled(true);
 
 	}  
+	
+
 	
 	/** Handle screen rotation */
 	@Override
@@ -239,7 +254,9 @@ public class Froscon13 extends SherlockActivity {
 		switch (item.getItemId()) {
 		case R.id.refresh:
 			//myWebView.reload();
-			myWebView.loadUrl( "javascript:window.location.reload( true )" );
+//			myWebView.loadUrl( "javascript:window.location.reload( true )" );
+			myWebView.loadUrl( default_url );
+
 //			icon = myWebView.getFavicon();
 //			//myWebView.getTouchIconUrl();
 //			//if (!icon.equals(null))	{}			

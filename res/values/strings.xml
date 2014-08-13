@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FrOSCon13</string>
+    <string name="app_name">FrOSCon</string>
     <string name="refresh">Refresh</string>
     <string name="info">Homepage</string>
     <string name="host">Host</string>
