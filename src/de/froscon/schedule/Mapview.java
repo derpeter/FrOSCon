@@ -1,4 +1,4 @@
-package de.froscon13.schedule;
+package de.froscon.schedule;
 
 import android.annotation.SuppressLint;
 import android.graphics.Matrix;
@@ -18,6 +18,8 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+
+import de.froscon.schedule.R;
 
 
 public class Mapview extends SherlockActivity{

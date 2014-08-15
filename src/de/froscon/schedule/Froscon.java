@@ -1,4 +1,4 @@
-package de.froscon13.schedule;
+package de.froscon.schedule;
 
 import com.actionbarsherlock.app.ActionBar;
 
@@ -19,10 +19,12 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
+
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 //import com.actionbarsherlock.view.Window;
+
 
 import android.webkit.SslErrorHandler;
 import android.webkit.WebIconDatabase;
@@ -34,9 +36,11 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
+
+import de.froscon.schedule.R;
 import android.webkit.SslErrorHandler;
 
-public class Froscon13 extends SherlockActivity {
+public class Froscon extends SherlockActivity {
 
 	protected FrameLayout webViewPlaceholder;
 	private WebView myWebView;
@@ -107,7 +111,7 @@ public class Froscon13 extends SherlockActivity {
 			myWebView.setWebViewClient(new WebViewClient(){
 			    public void onReceivedError(WebView view, int errorCod,String description, String failingUrl) {
 			        Toast.makeText(myWebView.getContext(), "Could not load schedule.\n Check internet connection" , Toast.LENGTH_LONG).show();
-			        Log.w("Froscon13","can't get schedule");
+			        Log.w("FrOSCon","can't get schedule");
 			        myWebView.loadUrl("file:///android_res/drawable/froschbutton.png");
 			        //myWebView.setEnabled(false);
 			    }
