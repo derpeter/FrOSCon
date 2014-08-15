@@ -1,4 +1,4 @@
-package de.froscon.schedule;
+package org.froscon.schedule;
 
 import com.actionbarsherlock.app.ActionBar;
 
@@ -37,7 +37,7 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
-import de.froscon.schedule.R;
+import org.froscon.schedule.R;
 import android.webkit.SslErrorHandler;
 
 public class Froscon extends SherlockActivity {

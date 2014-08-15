@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="de.froscon.schedule"
-      android:versionCode="5"
-      android:versionName="1.4">
+      package="org.froscon.schedule"
+      android:versionCode="1"
+      android:versionName="1.3.3.7">
     <uses-sdk android:minSdkVersion="7" 
         android:targetSdkVersion="20" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="de.froscon.schedule.Mapview"  
-            	  android:parentActivityName="de.froscon.schedule.Froscon"
+        <activity android:name="org.froscon.schedule.Mapview"  
+            	  android:parentActivityName="org.froscon.schedule.Froscon"
             	  android:theme="@style/Theme.Sherlock">
             	  
                   <meta-data
