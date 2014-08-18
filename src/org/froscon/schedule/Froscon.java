@@ -23,8 +23,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Bundle;
@@ -68,7 +66,7 @@ public class Froscon extends SherlockActivity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		 getWindow().requestFeature(Window. FEATURE_PROGRESS);
+		getWindow().requestFeature(Window. FEATURE_PROGRESS);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -215,7 +213,7 @@ public class Froscon extends SherlockActivity {
 	/** Host choosing dialog. */
 	private void hostpicker() {
 		AlertDialog.Builder picker = new AlertDialog.Builder(this);
-		picker.setTitle(R.string.enyhost);
+		picker.setTitle(R.string.URL);
 
 		final EditText input = new EditText(this);
 		input.setText(url);
@@ -274,23 +272,23 @@ public class Froscon extends SherlockActivity {
 			//myWebView.reload();
 //			myWebView.loadUrl( "javascript:window.location.reload( true )" );
 			myWebView.loadUrl( default_url );
-
 //			icon = myWebView.getFavicon();
 //			//myWebView.getTouchIconUrl();
 //			//if (!icon.equals(null))	{}			
 //				getSupportActionBar().setIcon(new BitmapDrawable(getResources(), icon));
 			return true;
 		case R.id.info:
-			Intent viewIntent = new Intent("android.intent.action.VIEW",
-					Uri.parse("http://www.froscon.org"));
-			startActivity(viewIntent);
+	        myWebView.loadUrl("http://froscon.org");			
+//			Intent viewIntent = new Intent("android.intent.action.VIEW",
+//					Uri.parse("http://www.froscon.org"));
+//			startActivity(viewIntent);
 			return true;
 //		case R.id.host:
 //			hostpicker();
 //			return true;
-		case R.id.home:
-			myWebView.loadUrl(url);
-			return true;
+//		case R.id.home:
+//			myWebView.loadUrl(url);
+//			return true;
 		case android.R.id.home:
 			myWebView.loadUrl(url);
             return true;
@@ -300,6 +298,10 @@ public class Froscon extends SherlockActivity {
 		case R.id.maps:
 			startActivity(new Intent(this, Mapview.class).putExtra("fs", fs));
 			return true;
+		case R.id.nav:
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" +50.779868+","+7.182698));
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
 		default:
 			return super.onOptionsItemSelected(item);
 		}

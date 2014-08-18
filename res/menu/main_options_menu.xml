@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/maps" android:title="@string/map" android:icon="@drawable/ic_menu_mapmode" android:showAsAction="always"></item><item android:id="@+id/refresh" android:title="@string/refresh" android:icon="@drawable/ic_menu_refresh" android:showAsAction="ifRoom" />
-    <item android:id="@+id/info" android:title="@string/info" android:icon="@android:drawable/ic_menu_info_details" android:showAsAction="always"/>
-    <item android:id="@+id/fs" android:title="@string/fs" android:icon="@drawable/ic_menu_fullscreen" android:showAsAction="ifRoom"></item>
-    <item android:id="@+id/home" android:title="@string/home" android:icon="@drawable/ic_menu_home" android:showAsAction="ifRoom"></item>
-<!--     <item android:id="@+id/host" android:title="@string/host" android:icon="@drawable/ic_menu_manage" android:showAsAction="ifRoom"></item>
- -->
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/nav"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_directions"
+        android:showAsAction="always"
+        android:title="@string/nav"
+        android:visible="true">
+    </item>
+    <item
+        android:id="@+id/maps"
+        android:icon="@drawable/ic_menu_mapmode"
+        android:showAsAction="always"
+        android:title="@string/map">
+    </item>
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/ic_menu_home"
+        android:showAsAction="always"
+        android:title="@string/info">
+    </item>
+    <item
+        android:id="@+id/fs"
+        android:icon="@drawable/ic_menu_fullscreen"
+        android:showAsAction="ifRoom"
+        android:title="@string/fs">
+    </item>
+    <item
+        android:id="@+id/refresh"
+        android:icon="@drawable/ic_menu_refresh"
+        android:showAsAction="ifRoom"
+        android:title="@string/refresh">
+    </item>
+
 </menu>

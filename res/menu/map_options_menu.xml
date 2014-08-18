@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/switchFloor" android:title="@string/swfloor" android:icon="@drawable/ic_menu_directions" android:enabled="true" android:visible="true" android:showAsAction="always|withText"></item>
-    
+
+    <item
+        android:id="@+id/switchFloor"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_revert"
+        android:showAsAction="always|withText"
+        android:title="@string/swfloor"
+        android:visible="true">
+    </item>
 
 </menu>
